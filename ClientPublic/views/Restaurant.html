@@ -1,38 +1,38 @@
 <div class="container-fluid"> <!-- container -->
 	<div> <!-- restaurant info -->
 		<div class='find-rest-data'>
-		<div class='rest image'></div>
+		<div class='rest-image'></div>
 		<div>
 
-		<div class='rest name'>
+		<div class='rest-name'>
 			{{thisRest.businessName}}
 		</div>
-		<div class='rest address'>
+		<div class='rest-address'>
 			<span>{{thisRest.businessAddress.addressOne}}</span>
-			<span>{{thisRest.businessAddress.addressTwo}}
-			{{thisRest.businessAddress.city}}
+			<span>{{thisRest.businessAddress.addressTwo}}</span>
+			<span>{{thisRest.businessAddress.city}},
 			{{thisRest.businessAddress.state}}</span>
 			<span>{{thisRest.businessAddress.zip}}</span>
 		</div>
 
 		</div>
 		{{daySelector(dayOfWeek, thisRest.operatingHours)}}
-		<div class='rest hours'>
-		<div>
+		<div class='rest-hours'>
+		<!-- <div>
 			<div class='hours'>
 				<span>{{dayOfWeek}}</span>
-				<span>Open: </span>
-				<span>Close: </span>
+				<span> Open: </span>
+				<span> Close: </span>
 			</div>
-		</div>
-		<span>{{phoneNumberFormat(thisRest.businessNumber)}}</span>
+		</div> -->
+			<span>{{thisRest.businessNumber}}</span>
 		</div>
 				
 
 		</div>
 	</div>
 	
-	<div> <!-- form container -->
+	<div class="jumbotron"> <!-- form container -->
 		<h3>Make a Reservation!</h3>
 		<br />
 		<form>
@@ -105,13 +105,6 @@
 					</div>
 
 
-				</div>
-			</fieldset>
-			<hr />
-			<fieldset class="res-contact-info"> <!-- confirm/enter contact info -->
-				<div class="res-input">
-					<label>Contact Phone #</label>
-					<input type="number" ng-model="thisUser.phoneNumber" required />
 				</div>
 			</fieldset>
 			<br />

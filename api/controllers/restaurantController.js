@@ -13,7 +13,7 @@ module.exports = {
 	},
 
 	readClient: function(req, res) {
-		// console.log('readClient in restaurantController: ', req.query);
+		console.log('readClient in restaurantController: ', req.query);
 		Restaurant
 		.find(req.query)
 		.exec(function(err, result) {
@@ -29,6 +29,19 @@ module.exports = {
 		console.log('restaurantController: ', req.user);
 		Restaurant
 		.find(req.user._id)
+		.exec(function(err, result) {
+			if (err) {
+				return res.status(500).send(err);
+			} else {
+				return res.send(result);
+			}
+		});
+	},
+
+	readById: function(req, res) {
+		console.log('read by id: ', req.params.id);
+		Restaurant
+		.findById(req.params.id)
 		.exec(function(err, result) {
 			if (err) {
 				return res.status(500).send(err);
