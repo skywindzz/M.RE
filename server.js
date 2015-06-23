@@ -151,11 +151,12 @@ app.get('/api/auth/logout', function(req, res) {
 });
 // restaurant endpoint
 app.get('/api/restaurant', RestaurantController.read);
+app.get('/api/findrestaurant', RestaurantController.readClient);
 app.put('/api/restaurant/update', requireAuth, RestaurantController.update);
 app.delete('/api/restaurant/delete', requireAuth, RestaurantController.delete);
 // client endpoint
 app.get('/api/client', requireAuth, ClientController.read);
-app.put('/api/client/:id', requireAuth, ClientController.update);
+app.put('/api/client', requireAuth, ClientController.update);
 app.delete('/api/client/:id', requireAuth, ClientController.delete);
 // menu endpoint
 app.post('/api/menu/drink', requireAuth, MenuController.addDrink);
