@@ -25,6 +25,10 @@ app.service('ReservationService', function($q, $http, $window) {
 			url: '/api/reservation',
 			data: obj
 		}).then(function(response) {
+<<<<<<< HEAD
+=======
+			console.log('response from reservationService: ', response);
+>>>>>>> 1944bcff7bace34f4583b3a5973ba4d2932f312c
 			$window.location.href = '/public';
 		})
 	};
